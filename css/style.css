@@ -1,4 +1,43 @@
 /* CUSTOM PROPS */
+:root {
+    --dark-color: #000000;
+    --light-color: #ffffff;
+    --font-color: #333333;
+    --not-active: #555555;
+    --bg-one: #F3D7B7;
+    --bg-two: #F8F8F2;
+    --bg-three: #0A775F;
+    --bg-four: #F8F8F2;
+    --bg-five: #C99B67;
+}
+
+/* FONTS */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.woff2') format('woff2'),
+        url('../fonts/Roboto-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
+        url('../fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
+        url('../fonts/Roboto-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 
 /* GLOBAL */
 html {
