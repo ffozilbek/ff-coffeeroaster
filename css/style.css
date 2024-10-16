@@ -61,14 +61,15 @@ body {
     margin: 0;
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Roboto","Arial",sans-serif;
+    letter-spacing: normal;
+    font-family: "Roboto", "Arial", sans-serif;
     flex-direction: column;
     background-color: #fff;
-    color: #222;
+    color: var(--font-color);
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
 }
@@ -77,12 +78,113 @@ main {
     flex-grow: 1;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
 /* CONTAINER */
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
     width: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* HEADER */
+.header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.header__container {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    margin-right: auto;
+    z-index: 99;
+}
+
+.logo__img {
+    width: 235px;
+}
+
+.logo {
+    display: inline-block;
+    transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo:active {
+    opacity: 0.6;
+}
+
+.header__nav {
+    transition: transform 0.2s ease;
+}
+
+.header__nav.active {
+    transform: translateY(0);
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.nav__item:not(:last-child) {
+    margin-right: 40px;
+}
+
+.nav__link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--font-color);
+    transition: color 0.2s ease;
+}
+
+.nav__link:hover {
+    color: var(--bg-five);
+}
+
+.nav__link:active {
+    opacity: 0.6;
+}
+
+.burger {
+    display: none;
+    z-index: 99;
+}
+
+.burger__item {
+    list-style: none;
+    width: 30px;
+    height: 4px;
+    background-color: var(--font-color);
+    border-radius: 5px;
+}
+
+.burger__item:not(:last-child) {
+    margin-bottom: 4px;
+}
 }
