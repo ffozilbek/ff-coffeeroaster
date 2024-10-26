@@ -20,16 +20,6 @@
     counter-reset: section;
 }
 
-.faq__menu-item-link::before {
-    counter-increment: section;
-    content: "0" counter(section) " ";
-    font-size: 28px;
-    font-weight: 500;
-    color: var(--not-active);
-}
-
-
-
 .faq__menu-item:not(:last-child) {
     margin-bottom: 30px;
 }
@@ -41,6 +31,20 @@
     font-weight: 500;
     text-transform: uppercase;
     white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.faq__menu-item-link::before {
+    counter-increment: section;
+    content: "0" counter(section) " ";
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--not-active);
+}
+
+.faq__menu-item-link:hover,
+.faq__menu-item-link:hover.faq__menu-item-link::before {
+    color: var(--dark-color);
 }
 
 .faq__menu-item-link.active {
@@ -78,6 +82,7 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .faq__tab-title::after {
@@ -108,7 +113,14 @@
     background-color: rgba(10, 119, 95,0.2);
     padding: 30px 16px 56px;
     color: var(--font-color);
-    align-self: normal
+    align-self: normal;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.faq__tab-card:hover {
+    background-color: var(--bg-three);
+    color: var(--light-color);
 }
 
 .faq__tab-card.active {
@@ -141,11 +153,49 @@
 
     .faq__menu-list {
         margin-left: auto;
-        margin-bottom: 25px;
+        margin-bottom: 60px;
     }
 
     .faq__tab-list {
         margin-left: 0;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .faq__tab-cards {
+        flex-direction: column;
+    }
+
+    .faq__tab-card {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .faq__tab-title {
+        font-size: 24px;
+    }
+
+    .faq__tab-title::after {
+        margin-left: 12px;
+    }
+
+    .faq__container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .faq__inner {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .faq__tab-title {
+        white-space: wrap;
     }
 
 }
