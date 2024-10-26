@@ -1,0 +1,151 @@
+@import url("../css/style.css");
+@import url("../css/about.css");
+
+.faq {
+    margin-bottom: 50px;
+}
+
+.faq__inner {
+    background-image: url("../img/collection-bg.jpg");
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 140px;
+    padding-left: 30px;
+    display: flex;
+}
+
+.faq__menu-list {
+    margin-right: auto;
+    list-style: none;
+    counter-reset: section;
+}
+
+.faq__menu-item-link::before {
+    counter-increment: section;
+    content: "0" counter(section) " ";
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--not-active);
+}
+
+
+
+.faq__menu-item:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.faq__menu-item-link {
+    text-decoration: none;
+    font-size: 28px;
+    color: var(--not-active);
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.faq__menu-item-link.active {
+    color: var(--dark-color);
+}
+
+.faq__menu-item-link.active::before {
+    color: var(--dark-color);
+}
+
+.faq__menu-item-link.active::after {
+    content: "";
+    background-image: url("../img/dashed-line.png");
+    width: 100%;
+    height: 3px;
+    display: block;
+}
+
+.faq__tab-list {
+    list-style: none;
+    margin-left: 30px;
+    max-width: 660px;
+}
+
+.faq__tab-item:not(:last-child) {
+    margin-bottom: 60px;
+}
+
+.faq__tab-title {
+    font-size: 35px;
+    color: var(--dark-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.faq__tab-title::after {
+    content: "";
+    background-image: url("../img/angel-down.svg");
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-left: 44px;
+}
+
+.faq__tab-cards {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    gap: 18px;
+    display: none;
+}
+
+.faq__tab-cards.active {
+    display: flex;
+}
+
+.faq__tab-card {
+    max-width: 206px;
+    width: 100%;
+    position: relative;
+    background-color: rgba(10, 119, 95,0.2);
+    padding: 30px 16px 56px;
+    color: var(--font-color);
+    align-self: normal
+}
+
+.faq__tab-card.active {
+    background-color: var(--bg-three);
+    color: var(--light-color);
+}
+
+.tab-card__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.tab-card__text {
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .faq__inner {
+        padding-right: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 1026px) {
+    .faq__inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .faq__menu-list {
+        margin-left: auto;
+        margin-bottom: 25px;
+    }
+
+    .faq__tab-list {
+        margin-left: 0;
+    }
+
+}
